@@ -32,3 +32,17 @@ flex-direction: row;
   display: flex;
   flex-direction: row;
 }
+
+
+@media (max-width: 600px) {
+  p {
+    margin: 15px;
+    font-size: 40px;
+    color: red
+  }
+
+  header{
+    padding-right: 25px;
+    background-color: blue;
+  }
+}
