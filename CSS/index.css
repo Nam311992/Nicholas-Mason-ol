@@ -33,16 +33,29 @@ flex-direction: row;
   flex-direction: row;
 }
 
-
-@media (max-width: 600px) {
+/*tablet*/
+@media (max-width: 900px) {
   p {
     margin: 15px;
     font-size: 40px;
-    color: red
+    color: rgb(235, 12, 12)
   }
 
   header{
     padding-right: 25px;
-    background-color: blue;
+    background-color: rgba(244, 148, 4, 0.406);
   }
 }
+/*phone*/
+@media (max-width: 500px) {
+  p {
+    margin: 15px;
+    font-size: 40px;
+    color: orange;
+  }
+  header{
+    padding-right: 25px;
+    background-color: rgba(53, 138, 167, 0.759);
+  }
+}
+
