@@ -66,3 +66,45 @@ messageForm.addEventListener('submit', function(event) {
   // Append the new message to the message list
   messageList.appendChild(newMessage);
 });
+
+
+
+// Replace 'YOUR_GITHUB_USERNAME' with your actual GitHub username
+const username = 'Nam311992';
+const url = `https://api.github.com/users/${username}/repos`;
+
+// Perform the fetch request
+fetch(url)
+  .then(response => {
+    // Check if the response is OK
+    if (!response.ok) {
+      throw new Error('Network response was not ok ' + response.statusText);
+    }
+    // Parse the JSON response
+    return response.json();
+  })
+  .then(repositories => {
+    // Now 'repositories' holds the parsed JSON data
+    console.log(repositories);
+  })
+  .catch(error => {
+    // Handle errors
+    console.error('There was a problem with the fetch operation:', error);
+  });
+
+  function displayRepositories(repositories) {
+    // Select the project section and list elements
+    const projectSection = document.getElementById('projects');
+    const projectList = projectSection.querySelector('ul');
+  
+    // Clear any existing list items
+    projectList.innerHTML = '';
+  
+    // Iterate over repositories and create list items
+    repositories.forEach(repo => {
+      const project = document.createElement('li');
+      project.innerText = repo.name;
+      projectList.appendChild(project);
+    });
+  }
+  
